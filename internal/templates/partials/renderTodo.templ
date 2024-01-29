@@ -1,6 +1,7 @@
 package partials
 
 import (
+	"fmt"
 	"github.com/stackus/todos/internal/domain"
 )
 
@@ -8,7 +9,7 @@ templ RenderTodo(todo *domain.Todo) {
 	<div class="block py-2 border-b-4 border-dotted border-red-900 draggable">
 		<form
 			method="POST"
-			action={ "/todos/"+todo.ID.String()+"/delete" }
+			action={ templ.URL(fmt.Sprintf("/todos/%s/delete", todo.ID.String())) }
 			class="inline"
 		>
 			<button
@@ -23,7 +24,7 @@ templ RenderTodo(todo *domain.Todo) {
 		</form>
 		<form
 			method="GET"
-			action={ "/todos/"+todo.ID.String() }
+			action={ templ.SafeURL("/todos/"+todo.ID.String()) }
 			class="inline"
     >
 			<button
@@ -38,7 +39,7 @@ templ RenderTodo(todo *domain.Todo) {
 		</form>
 		<form
 			method="POST"
-			action={ "/todos/"+todo.ID.String()+"/edit" }
+			action={ templ.URL(fmt.Sprintf("/todos/%s/edit", todo.ID.String())) }
 			hx-target="closest div"
 			hx-swap="outerHTML"
 			class={ "inline", templ.KV("line-through", todo.Completed) }

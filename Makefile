@@ -11,7 +11,7 @@ init:
 
 assets:
 	@echo "Build the assets"
-	tailwindcss -i ./internal/assets/tailwind.css -o ./internal/assets/dist/styles.css
+	npx tailwindcss -i ./internal/assets/tailwind.css -o ./internal/assets/dist/styles.css
 
 generate:
 	@echo "Generate stuff and things"
