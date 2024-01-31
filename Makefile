@@ -19,6 +19,7 @@ generate:
 
 run: assets generate
 	@echo "Run the application"
+	npx tailwindcss -i ./internal/assets/tailwind.css -o ./internal/assets/dist/styles.css --watch&
 	go run ./cmd/server/...
 
 test:

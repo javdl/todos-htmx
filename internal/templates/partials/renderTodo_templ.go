@@ -28,7 +28,7 @@ func RenderTodo(todo *domain.Todo) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"block py-2 border-b-4 border-dotted border-red-900 draggable\"><form method=\"POST\" action=\"")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"block py-2 border-b-4 border-dotted border-red-900 draggable text-cyan-500\"><form method=\"POST\" action=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

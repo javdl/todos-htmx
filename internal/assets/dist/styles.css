@@ -803,6 +803,11 @@ select {
   font-weight: 700;
 }
 
+.text-cyan-500 {
+  --tw-text-opacity: 1;
+  color: rgb(6 182 212 / var(--tw-text-opacity));
+}
+
 .line-through {
   text-decoration-line: line-through;
 }
